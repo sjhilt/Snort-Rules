@@ -6,5 +6,7 @@
 #	Variables to set in snort.conf
 #
 #-----------------------------
-# Alert on a command that was issued to liste Tank Inventory
-alert tcp any any -> any 10001 (content: "|49 32 30 31 30 30|"; offset: 1; depth: 6; msg: "List Inventory Command Attempt Guardian AST)";priority:3; sid:999999999;)
+# Alert on a command that was issued to list Tank Inventory
+alert tcp any any -> any 10001 (content: "|49 32 30 31 30 30|"; offset: 1; depth: 6; msg: "List Inventory Command Attempt Guardian AST";priority:3; sid:999999999;)
+# Alert on a command that was issued to set the Tank Names
+alert tcp any any -> any 10001 (content: "|53 36 30 32 30|:; offset: 1; depth: 5; msg: "Guardian AST Set Tank Name Command Attempt"; priority:1; sid:999999999910;)
