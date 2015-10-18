@@ -7,6 +7,14 @@
 #
 #-----------------------------
 # Alert on a command that was issued to list Tank Inventory
-alert tcp any any -> any 10001 (content: "|49 32 30 31 30 30|"; offset: 1; depth: 6; msg: "List Inventory Command Attempt Guardian AST";priority:3; sid:999999999;)
+alert tcp any any -> any 10001 (content: "|49 32 30 31 30 30|"; offset: 1; depth: 6; msg: "List Inventory Command Attempt Guardian AST";priority:3; sid:99999999999;)
 # Alert on a command that was issued to set the Tank Names
 alert tcp any any -> any 10001 (content: "|53 36 30 32 30|:; offset: 1; depth: 5; msg: "Guardian AST Set Tank Name Command Attempt"; priority:1; sid:999999999910;)
+# Alert on a command that was issued to list the Delivery Report
+alert tcp any any -> any 10001 ( content: "|49 32 30 32 30 30|"; offset: 1; depth: 6; msg: "Guardian AST List Delivery Report Command Attempt"; priorty:3; sid:999999999911;)
+# Alert on a command that was issued to List the Leak Detection Report
+alert tcp any any -> any 10001 ( content: "|49 32 30 33 30 30|"; offset: 1; depth: 6; msg: "Guardian AST List Leak Detection Report Command Attempt"; priorty:3; sid:999999999912;)
+# Alert on a command that was issued to List the Shift Report
+alert tcp any any -> any 10001 ( content: "|49 32 30 34 30 30|"; offset: 1; depth: 6; msg: "Guardian AST List Shift Report Command Attempt"; priorty:3; sid:999999999913;)
+# Alert on a command that was issued to List the Shift Report
+alert tcp any any -> any 10001 ( content: "|49 32 30 35 30 30|"; offset: 1; depth: 6; msg: "Guardian AST List In-tank Status Report Command Attempt"; priorty:3; sid:999999999914;)
